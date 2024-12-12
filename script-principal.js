@@ -54,6 +54,13 @@ inputPI.addEventListener("input", (event) => {
     }
 })
 
+inputPI.addEventListener("selectionchange", (event) => {
+    if (document.getSelection().type === "Range") {
+        inputPI.value = "";
+        alert.innerText = `Você não pode colar nada neste campo!`
+    }
+})
+
 
 textPI.addEventListener("copy", (event) => {
     event.preventDefault();
