@@ -40,7 +40,7 @@ inputPI.addEventListener("beforeinput", (event) => {
 
 // Bloquear colar mobile pela área de transferência
 inputPI.addEventListener("input", (event) => {
-    if (event.inputType === "insertFromPaste" || inputPI.value !== '') {
+    if (event.inputType === "insertFromPaste") {
         event.preventDefault();
         alert.innerText = `Você não pode colar nada neste campo!`
     }
