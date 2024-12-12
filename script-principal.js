@@ -13,6 +13,14 @@ inputPI.addEventListener("paste", (event) => {
     alert.innerText = `Você não pode colar nada neste campo!`
 });
 
+// Bloquear o CTRL+V
+document.addEventListener("paste", (event) => {
+    if (event.target === inputPI) {
+        event.preventDefault();
+        alert.innerText = `Você não pode colar nada neste campo!`
+    }
+});
+
 // Bloquear o arrastar
 inputPI.addEventListener("drop", (event) => {
     event.preventDefault();
