@@ -138,13 +138,19 @@ body {
     border-color: black;
 }
 
+.box-button {
+    display: flex;
+    justify-content: center;
+    margin-top: .3rem;
+    margin-bottom: .5rem;
+}
+
 #enviarResult {
     background-color: var(--lightest-gray);
     border-radius: .7rem;
-    margin-top: .3rem;
-    margin-bottom: .5rem;
     padding: .7rem;
-    width: 100%;
+    width: 50%;
+    max-width: 300px;
     font-weight: bold;
 
     cursor: pointer;

@@ -11,23 +11,27 @@ function mostrarPI() {
 inputPI.addEventListener("paste", (event) => {
     event.preventDefault();
     alert.innerText = `Você não pode colar nada neste campo!`
+    console.log("Você não pode colar nada neste campo! - paste")
 });
 
 // Bloquear o arrastar
 inputPI.addEventListener("drop", (event) => {
     event.preventDefault();
     alert.innerText = `Você não pode arrastar nada neste campo!`
+    console.log("Você não pode arrastar nada neste campo!- drop")
 });
 
 // Bloquear recortar
 inputPI.addEventListener("cut", (event) => {
     event.preventDefault();
+    console.log("Você não pode recortar nada neste campo! - cut")
 })
 
 // Bloquear colar mobile e abrir o menu de contexto (copiar/colar/cortar)
 inputPI.addEventListener("contextmenu", (event) => {
     event.preventDefault();
     alert.innerText = `Você não pode colar nada neste campo!`
+    console.log("Você não pode colar nada neste campo! - contextmenu")
 })
 
 // Bloquear colar mobile pela área de transferência
@@ -35,6 +39,7 @@ inputPI.addEventListener("beforeinput", (event) => {
     if (event.inputType === "insertFromPaste") {
         event.preventDefault();
         alert.innerText = `Você não pode colar nada neste campo!`
+        console.log("Você não pode colar nada neste campo! - beforeinput")
     }
 })
 
@@ -43,6 +48,7 @@ inputPI.addEventListener("input", (event) => {
     if (event.inputType === "insertFromPaste") {
         event.preventDefault();
         alert.innerText = `Você não pode colar nada neste campo!`
+        console.log("Você não pode colar nada neste campo! - input")
     }
 })
 
@@ -51,14 +57,9 @@ inputPI.addEventListener("selectionchange", (event) => {
     if (document.getSelection().type === "Range") {
         inputPI.value = "";
         alert.innerText = `Você não pode colar nada neste campo!`
+        console.log("Você não pode colar nada neste campo! - selectionchange")
     }
 })
-
-// Bloquear colar mobile pela área de transferência
-window.onload = () => {
-    inputPI.onpaste = e => e.preventDefault();
-}
-
 
 textPI.addEventListener("copy", (event) => {
     event.preventDefault();
