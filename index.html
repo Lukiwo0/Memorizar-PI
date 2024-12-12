@@ -24,42 +24,39 @@
 <body>
 
     <div class="content">
-        <main class="container-main">
-            <div class="text">
-                <h1 class="title">Memorize o PI</h1>
-                <p>
-                    Teste sua rapidez mental e agilidade de memória com o desafio de memorizar o número Pi (π) até 100
-                    casas decimais! O objetivo é decifrar e recitar o número em tempo recorde. Com foco em velocidade,
-                    prepare-se para superar seus limites e competir com seus amigos para ver quem consegue memorizar e
-                    recitar mais rápido. Aceite o desafio e mostre sua habilidade de memorização!
-                </p>
-            </div>
-
-            <div class="box-info-pi">
-                <button onclick="mostrarPI()">Clique mostrar/ocultar o número PI</button>
-                <div id="number-pi" class="ocultar">
+        <div class="container">
+            <main class="container-main">
+                <div class="text">
+                    <h1 class="title">Memorize o PI</h1>
                     <p>
-                        Número PI:
-                        <strong>3,1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679</strong>
+                        Teste sua rapidez mental e agilidade de memória com o desafio de memorizar o número Pi (π) até 100
+                        casas decimais! O objetivo é decifrar e recitar o número em tempo recorde. Com foco em velocidade,
+                        prepare-se para superar seus limites e competir com seus amigos para ver quem consegue memorizar e
+                        recitar mais rápido. Aceite o desafio e mostre sua habilidade de memorização!
                     </p>
                 </div>
-            </div>
-
-            <div id="box-test-pi" class="box-test-pi">
-                <h1 id="timer">00:00:00</h1>
-
-                <p class="title-test">Digite o número PI:</p>
-                <input type="text" name="" id="user-pi" placeholder="Clique e comece...">
-                <br>
-
-                <div id="alert"></div>
-                
-                <button id="enviarResult">Enviar</button>
-                <p class="obs-test">Você consegue enviar também apertando o "Enter" do teclado.</p>
-
-                <div id="result"></div>
-            </div>
-        </main>
+                <div class="box-info-pi">
+                    <button onclick="mostrarPI()">Clique mostrar/ocultar o número PI</button>
+                    <div id="number-pi" class="ocultar">
+                        <p>
+                            Número PI:
+                            <strong>3,1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679</strong>
+                        </p>
+                    </div>
+                </div>
+                <div id="box-test-pi" class="box-test-pi">
+                    <h1 id="timer">00:00:00</h1>
+                    <p class="title-test">Digite o número PI:</p>
+                    <input type="text" name="" id="user-pi" placeholder="Clique e comece...">
+                    <br>
+                    <div id="alert"></div>
+            
+                    <button id="enviarResult">Enviar</button>
+                    <p class="obs-test">Você consegue enviar também apertando o "Enter" do teclado.</p>
+                    <div id="result"></div>
+                </div>
+            </main>
+        </div>
     </div>
 
     <footer id="footer-padrao" class="footer-main">
