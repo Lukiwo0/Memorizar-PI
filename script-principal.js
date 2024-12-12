@@ -6,15 +6,28 @@ function mostrarPI() {
     mostrar.classList.toggle("ocultar")
 }
 
+// Bloquear o CTRL+V
 inputPI.addEventListener("paste", (event) => {
     event.preventDefault();
     alert.innerText = `Você não pode colar nada neste campo!`
 });
 
+// Bloquear o arrastar
 inputPI.addEventListener("drop", (event) => {
     event.preventDefault();
     alert.innerText = `Você não pode arrastar nada neste campo!`
 });
+
+// Bloquear sugestão no input
+inputPI.addEventListener("cut", (event) => {
+    event.preventDefault();
+})
+
+// Bloquear recortar e colar mobile
+inputPI.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+})
+
 
 let timer;
 let horas = 0, minutos = 0, segundos = 0;
