@@ -46,12 +46,18 @@ inputPI.addEventListener("input", (event) => {
     }
 })
 
+// Bloquear colar mobile pela área de transferência
 inputPI.addEventListener("selectionchange", (event) => {
     if (document.getSelection().type === "Range") {
         inputPI.value = "";
         alert.innerText = `Você não pode colar nada neste campo!`
     }
 })
+
+// Bloquear colar mobile pela área de transferência
+window.onload = () => {
+    inputPI.onpaste = e => e.preventDefault();
+}
 
 
 textPI.addEventListener("copy", (event) => {
