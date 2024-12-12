@@ -13,14 +13,6 @@ inputPI.addEventListener("paste", (event) => {
     alert.innerText = `Você não pode colar nada neste campo!`
 });
 
-// Bloquear o CTRL+V
-document.addEventListener("paste", (event) => {
-    if (event.target === inputPI) {
-        event.preventDefault();
-        alert.innerText = `Você não pode colar nada neste campo!`
-    }
-});
-
 // Bloquear o arrastar
 inputPI.addEventListener("drop", (event) => {
     event.preventDefault();
@@ -32,7 +24,7 @@ inputPI.addEventListener("cut", (event) => {
     event.preventDefault();
 })
 
-// Bloquear colar mobile e abrir menu de copiar/colar/cortar e etc do navegador
+// Bloquear colar mobile e abrir o menu de contexto (copiar/colar/cortar)
 inputPI.addEventListener("contextmenu", (event) => {
     event.preventDefault();
     alert.innerText = `Você não pode colar nada neste campo!`
@@ -48,7 +40,7 @@ inputPI.addEventListener("beforeinput", (event) => {
 
 // Bloquear colar mobile pela área de transferência
 inputPI.addEventListener("input", (event) => {
-    if (event.inputType === "insertFromPaste") {
+    if (event.inputType === "insertFromPaste" || inputPI.value !== '') {
         event.preventDefault();
         alert.innerText = `Você não pode colar nada neste campo!`
     }
