@@ -1,8 +1,20 @@
 const mostrar = document.getElementById("number-pi");
+const inputPI = document.getElementById("user-pi");
+const alert = document.getElementById("alert");
 
 function mostrarPI() {
     mostrar.classList.toggle("ocultar")
 }
+
+inputPI.addEventListener("paste", (event) => {
+    event.preventDefault();
+    alert.innerText = `Você não pode colar nada neste campo!`
+});
+
+inputPI.addEventListener("drop", (event) => {
+    event.preventDefault();
+    alert.innerText = `Você não pode arrastar nada neste campo!`
+});
 
 let timer;
 let horas = 0, minutos = 0, segundos = 0;
@@ -29,7 +41,7 @@ function iniciarTimer() {
 }
 
 // Detectar se o usuário começou a digitar
-document.getElementById("user-pi").addEventListener("input", function() {
+inputPI.addEventListener("input", function() {
     
     if (!mostrar.classList.contains("ocultar")) {
         mostrarPI();
@@ -43,9 +55,8 @@ document.getElementById("user-pi").addEventListener("input", function() {
 
 function resultadoTeste() {
     const pi = "3,1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"
-    const User = document.getElementById("user-pi").value;
+    const User = inputPI.value;
     const mensagemUser = User.replace(/\s+/g, '');
-    const alert = document.getElementById("alert");
     const result = document.getElementById("result");
     
     let validarResult = "";
@@ -56,7 +67,7 @@ function resultadoTeste() {
     result.innerHTML = "";
     
     clearInterval(intervalo);
-    document.getElementById("user-pi").value = "";
+    inputPI.value = "";
     document.getElementById("timer").innerText = `00:00:00`;
     horas = 0, minutos = 0, segundos = 0;
     timer = false;
@@ -102,7 +113,7 @@ function resultadoTeste() {
 
 document.getElementById("enviarResult").addEventListener("click", resultadoTeste);
 
-document.getElementById("user-pi").addEventListener("keydown", function(event) {
+inputPI.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         resultadoTeste();
     }
