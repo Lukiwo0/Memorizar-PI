@@ -1,5 +1,6 @@
 const mostrar = document.getElementById("number-pi");
 const inputPI = document.getElementById("user-pi");
+const textPI = document.getElementById("number-pi")
 const alert = document.getElementById("alert");
 
 function mostrarPI() {
@@ -18,16 +19,28 @@ inputPI.addEventListener("drop", (event) => {
     alert.innerText = `Você não pode arrastar nada neste campo!`
 });
 
-// Bloquear sugestão no input
+// Bloquear recortar
 inputPI.addEventListener("cut", (event) => {
     event.preventDefault();
 })
 
-// Bloquear recortar e colar mobile
+// Bloquear colar mobile e abrir menu de copiar/colar/cortar e etc do navegador
 inputPI.addEventListener("contextmenu", (event) => {
     event.preventDefault();
+    alert.innerText = `Você não pode colar nada neste campo!`
 })
 
+// Bloquear colar mobile pela área de transferência
+inputPI.addEventListener("beforeinput", (event) => {
+    if (event.inputType === "insertFromPaste") {
+        event.preventDefault();
+        alert.innerText = `Você não pode colar nada neste campo!`
+    }
+})
+
+textPI.addEventListener("copy", (event) => {
+    event.preventDefault();
+})
 
 let timer;
 let horas = 0, minutos = 0, segundos = 0;
