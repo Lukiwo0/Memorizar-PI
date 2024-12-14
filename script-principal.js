@@ -61,6 +61,18 @@ inputPI.addEventListener("selectionchange", (event) => {
     }
 })
 
+let lastValue = ""
+
+// Bloquear colar mobile pela área de transferência
+inputPI.addEventListener("input", () => {
+    if (inputPI.value.length > lastValue.length + 1) { //No início do código tu precisa criar e inicializar a variavel como let lastValue = "" pra ele funcionar
+        inputPI.value = ""; 
+        alert.innerText = `Você não pode colar nada neste campo!`;
+        console.log("Colagem detectada e conteúdo apagado!");
+    }
+    lastValue = inputPI.value;
+});
+
 textPI.addEventListener("copy", (event) => {
     event.preventDefault();
 })
